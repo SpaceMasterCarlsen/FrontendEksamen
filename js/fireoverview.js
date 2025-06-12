@@ -36,7 +36,7 @@ function createTable(fire){
     cell = row.insertCell(cellCount++)
     row.id = fire.id
     const editfire = document.createElement("a")
-    editfire.href = `edit-fire.html?=${fire.id}`
+    editfire.href = `edit-fire.html?id=${fire.id}`
     editfire.textContent = "Edit"
     editfire.setAttribute("value", "Edit")
     cell.appendChild(editfire)

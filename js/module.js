@@ -11,6 +11,7 @@ async function getObjectAsJson(url, obj, httpVerb){
         body: objAsJson
     };
     const response = await fetch(url, fetchOption)
+    return response
 }
 
 async function deleteObjects(url, obj) {
