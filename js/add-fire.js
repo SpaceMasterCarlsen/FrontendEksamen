@@ -17,6 +17,9 @@ async function handleFormSubmit(event){
     try{
         const formData = new FormData(form)
         const response = await postFormDataAsJson(url, formData)
+        if(response.ok){
+            window.location.href = "../pages/overview-of-sirens.html"
+        }
     } catch (error){
         alert(error.message)
         console.log(error)

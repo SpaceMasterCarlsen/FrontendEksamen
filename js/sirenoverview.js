@@ -38,12 +38,14 @@ function createTable(siren){
     const editSiren = document.createElement("a")
     editSiren.href = `edit-siren.html?id=${siren.id}`
     editSiren.textContent = "Edit"
+    editSiren.className = "niceBtn"
     cell.appendChild(editSiren)
 
     cell = row.insertCell(cellCount++)
     const deleteSiren = document.createElement("input")
     deleteSiren.type = "button"
     deleteSiren.setAttribute("value", "Delete")
+
     cell.appendChild(deleteSiren)
     deleteSiren.onclick = function (){
         document.getElementById(siren.id).remove()
