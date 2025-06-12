@@ -2,9 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Add Siren</title>
 </head>
 <body>
-<h1>er i edit</h1>
+<header></header>
+
+<main>
+    <h1>Edit Siren</h1>
+    <form id="sirenForm" action="http://localhost:8080/siren" >
+        <div>
+            <label for="locationName">Location name</label>
+            <input type="text" name="locationName" id="locationName" placeholder="LA etc.">
+        </div>
+        <div>
+            <label for="operationalStatus">Operational Status</label>
+            <input type="text" name="operationalStatus" id="operationalStatus" placeholder="aktiv or not aktiv">
+        </div>
+        <div>
+            <label for="isInWorkingCondition">Is in working condition</label>
+            <input type="checkbox" name="isInWorkingCondition" id="isInWorkingCondition">
+        </div>
+        <div>
+            <label for="latitude">Latitude</label>
+            <input type="text" name="latitude" id="latitude" placeholder="53.23232">
+        </div>
+        <div>
+            <label for="longitude">Longitude</label>
+            <input type="text" name="longitude" id="longitude" placeholder="20-2323">
+        </div>
+        <button type="submit">Create Siren</button>
+    </form>
+</main>
+
+<footer></footer>
+
 </body>
+<script type="module" src="../js/edit-siren.js"></script>
 </html>

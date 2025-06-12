@@ -17,7 +17,7 @@ async function initForm(){
     const fire = await fetchFire(fireId);
     if (fire) {
         fillForm(fire);
-        fireForm.action = `http://localhost:8080/fire/${fireId}`; // 👈 Sæt korrekt PUT URL
+        fireForm.action = `http://localhost:8080/fire/${fireId}`;
     }
 
     fireForm.addEventListener("submit", handleFormSubmit);
@@ -51,7 +51,7 @@ async function handleFormSubmit(event){
         const formData = new FormData(form)
         const response = await postFormDataAsJson(url, formData)
         if(response.ok){
-            alert("updated fire")
+            window.location.href = "../pages/overview-of-fires.html"
         }
     } catch (error){
         alert(error.message)
