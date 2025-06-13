@@ -105,4 +105,27 @@ main img {
     object-fit: cover;
 }
 
+.toggleStatusBtn {
+    padding: 4px 8px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.toggleStatusBtn:hover {
+    background-color: #0056b3;
+}
+
+.deleteBtn {
+    padding: 4px 8px;
+    background-color: #d7423e;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.deleteBtn:hover {
+    background-color: #79312f;
+}
 

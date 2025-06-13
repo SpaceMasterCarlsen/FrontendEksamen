@@ -44,6 +44,7 @@ function createTable(siren){
     cell = row.insertCell(cellCount++)
     const deleteSiren = document.createElement("input")
     deleteSiren.type = "button"
+    deleteSiren.className = "deleteBtn"
     deleteSiren.setAttribute("value", "Delete")
 
     cell.appendChild(deleteSiren)

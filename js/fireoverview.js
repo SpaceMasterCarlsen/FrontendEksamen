@@ -1,4 +1,4 @@
-import {fetchAnyUrl, deleteObjects} from "./module.js";
+import {fetchAnyUrl, deleteObjects, getObjectAsJson} from "./module.js";
 
 console.log("Is in fire over view!");
 
@@ -28,7 +28,11 @@ function createTable(fire){
     cell = row.insertCell(cellCount++)
     cell.innerHTML = fire.timestamp
     cell = row.insertCell(cellCount++)
-    cell.innerHTML = fire.status
+    const toggleActive = document.createElement("button")
+    toggleActive.textContent = fire.status ? "Active" : "De-Active"
+    toggleActive.className = "toggleStatusBtn"
+    toggleActive.addEventListener("click", () => toggleStatus(fire))
+    cell.appendChild(toggleActive)
     cell = row.insertCell(cellCount++)
     cell.innerHTML = fire.latitude
     cell = row.insertCell(cellCount++)
@@ -44,10 +48,19 @@ function createTable(fire){
     cell = row.insertCell(cellCount++)
     const deleteFire = document.createElement("input")
     deleteFire.type = "button"
+    deleteFire.className = "deleteBtn"
     deleteFire.setAttribute("value", "Delete")
     cell.appendChild(deleteFire)
     deleteFire.onclick = function (){
         document.getElementById(fire.id).remove()
         deleteObjects((url + `/${fire.id}`) ,fire)
     }
+}
+
+async function toggleStatus(fire){
+    const updatedFire = {...fire, status: !fire.status}
+    getObjectAsJson((url + `/${fire.id}`), updatedFire, "PUT")
+    fire.status = updatedFire.status
+    const row = document.getElementById(fire.id)
+    row.cells[3].querySelector("button").textContent = fire.status ? "Active" : "De-Active"
 }
