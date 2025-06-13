@@ -9,7 +9,7 @@ body {
 
 /* Main container */
 main {
-    height: 80vh;
+    height: 100%;
     margin: 40px auto 80px auto;
     background-color: white;
     padding: 30px 40px;
